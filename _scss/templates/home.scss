@@ -1,0 +1,54 @@
+.home {
+    width: 100%;
+    text-align: center;
+
+	img {
+		max-width: 500px;
+	}
+
+	a {
+		padding: .5em 1em;
+		//background: #fff;
+		color: #fff;
+		border-radius: 5px;
+		display: inline-block;
+		-webkit-transition: all 1.1s cubic-bezier(0.7, 0, 0.3, 1);
+		-moz-transition: all 1.1s cubic-bezier(0.7, 0, 0.3, 1);
+		transition: all 1.1s cubic-bezier(0.7, 0, 0.3, 1);
+		margin-top: 6%;
+		font-size: 20px;
+		text-transform: uppercase;
+		letter-spacing: 7px;
+		opacity: .7;
+
+		&:hover {
+			//background: #333;
+			color: #fff;
+			opacity: 1;
+			letter-spacing: 11px;
+			//1font-weight: 600;
+		}
+	}
+}
+
+@include media($vertical) {
+	.mobile-home {
+		background-image: url(/img/mobile-back.jpg) !important;
+	    background-position: top center !important;
+	}
+ }
+
+ .video-wrapper {
+	  height: 0;
+	  overflow: hidden;
+	  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+	  position: relative;
+	  margin-bottom: 35px;
+
+	  embed,
+	  object,
+	  iframe {
+	    @include position(absolute, 0 null null 0);
+	    @include size(100%);
+	  }
+}
